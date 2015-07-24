@@ -1,0 +1,102 @@
+// imports
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+// fonts
+$body-font: 'Lato', serif;
+
+// colors
+$green: #1cc48a;
+$light-green: #35aa70;
+$white-green: #f6fcf9;
+$dark-green: #083b29;
+$red: #c4361c;
+$pink: #c41c56;
+$gray: #333;
+$dark-gray: #111;
+$black: #000;
+
+
+// vars
+$bg-color: white;
+$font-color: $gray;
+$link-color: $gray;
+$font-size: 18px;
+
+$box-bg-color: $white-green;
+$box-bg-opacity: .15;
+
+$box-width: 200px;
+$min-box-height: $box-width;
+
+$fade-top: $green;
+$fade-bottom: $dark-green;
+
+// mixins
+@mixin background-opacity($color, $opacity: 0.5) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	background-color: $bg-color;
+	color: $font-color;
+	font-family: $body-font;
+	font-size: $font-size;
+}
+
+  body:before {
+    content: '';
+		position: fixed;
+		top: -50vh;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 200vh;
+		background-image: linear-gradient(to bottom, $fade-top, $fade-bottom);
+		opacity: 1; 
+  }
+
+a, a:hover, a:active, a:visited {
+	text-decoration: underline;
+	color: $link-color;
+	font-weight: bold;
+}
+
+a:hover {
+	color: $pink;
+}
+
+.container {
+	position: relative;
+}
+
+#box-container {
+	width: $box-width;
+	margin: 0 auto;
+}
+
+.box {
+	min-height: $min-box-height;
+	background-color: white;
+	@include background-opacity($box-bg-color, $box-bg-opacity);
+	padding: 2em;
+	text-align: center;
+	overflow: hidden;
+}
+
+.box + .box {
+	margin-top: 2em;
+}
+
+img#mail-icon {
+	max-height: 3em;
+}

@@ -1,0 +1,54 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  background-color: white;
+  color: #333333;
+  font-family: "Lato", serif;
+  font-size: 18px; }
+
+body:before {
+  content: '';
+  position: fixed;
+  top: -50vh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 200vh;
+  background-image: linear-gradient(to bottom, #1cc48a, #083b29);
+  opacity: 1; }
+
+a, a:hover, a:active, a:visited {
+  text-decoration: underline;
+  color: #333333;
+  font-weight: bold; }
+
+a:hover {
+  color: #c41c56; }
+
+.container {
+  position: relative; }
+
+#box-container {
+  width: 200px;
+  margin: 0 auto; }
+
+.box {
+  min-height: 200px;
+  background-color: white;
+  background: #f6fcf9;
+  background: rgba(246, 252, 249, 0.15);
+  padding: 2em;
+  text-align: center;
+  overflow: hidden; }
+
+.box + .box {
+  margin-top: 2em; }
+
+img#mail-icon {
+  max-height: 3em; }
